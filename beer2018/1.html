@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>Beer of the Day #1</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">The advent calendar, 2018</h2>
+    <nav>
+        <ul>
+            
+            <li><a href="1.html">dec 1</a></li>
+            <li><a href="2.html">dec 2</a></li>
+            <li><a href=".">all</a></li>
+        </ul>
+    </nav>
+
+
+    <h1 class="haiku">Dainton Blood Orange New England Rye IPA</h1>
+
+    <div class="haikus">
+    <div>
+    <h3>1</h3>
+    <p>
+    <img class="beer" src="daintons.png" width="148" height="264" alt="Daintons Blood Orange">
+    <b>Blood Orange New England Rye IPA</b><br>
+    <a href="http://www.daintonbrewing.com.au">Dainton Brewery</a><br>
+    Victoria<br>
+    <i>375mL can</i><br>
+    <i>6.0% Alc/Vol</i><br>
+    </div>
+    </div>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Beer</h2>
+    <p>
+    Clearly, hopping aboard the craze for hazy New England style IPAs currently rampaging through breweries across the country wasn't enough for Dainton Family Brewing. They had to go and give the style something a little more, well, Dan Dainton. So, for their spring entry into the land of the NEIPA, they added his favourite grain, rye, and loaded the beer up with blood orange too &mdash; presumably to make sure it really was juicy.
+    </p><p>
+    Thus, accompanying the citrusy hop aromas you'll find characteristics reminiscent of the flourless orange and poppyseed cakes that crop up without fail in quaint rural cafés. It's kind of appropriate too as the beer, in all its slurry-esque glory, is just as opaque as a slice of those cakes. It layers on the citrus juice like a gran layers sugary whipped cream onto her slice of flourless orange and poppyseed cake at her table in the window (OK, that's enough of the cake metaphor, thanks), comes with a brekkie juice like prickle and a bitterness that's more zesty than punchy, hidden amid the fruit slurry like a crumpled old tissue in the base of that gran's tattered handbag (That's it. You're fired).
+    </p>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Brewery</h2>
+    <p>
+    We are is a family of dedicated and tragic beer lovers crafting the best, freshest and most sessionable beers that we can. We have our fair share of shiny awards and that gives us some credence. But why chose us over another? Well, whenever you purchase a Dainton beer you should know that as a family owned and operated company, we not only oversee (and taste) all our beers, but we stand behind our produce 100%. After all it has our name on it! Not only that, we've put our hearts, souls and hard-earned into making our passion a reality. This beer is our legacy and by drinking it you know you are supporting a family that has thrown everything into the kettle, so to speak! We hope you enjoy it as much as we love making it!
+    </p>
+
+<div id="mapid"></div>
+<div class="space"></div>
+<div class="space"></div>
+
+<h2 class="haiku">Beer Fact of the Day</h2>
+<p>
+The first consumer protection law ever written was enacted over beer by Duke Wilhelm IV of Bavaria in 1516. It was a purity law limiting the ingredients of beer to barley, hops and water.
+</p>
+
+
+<script>
+var mymap = L.map('mapid').setView([-38.101431,145.1682663], 7);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+	L.marker([-38.101431,145.1682663]).addTo(mymap)
+    .bindPopup("<b>Dainton Family Brewery</b><br />Carrum Downs<br>Victoria").openPopup();
+
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

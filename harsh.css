@@ -1,0 +1,394 @@
+body
+{
+    font-family: 'IM Fell English', serif;
+    background-color: #d5d5d5; 
+    background-image: 
+    linear-gradient(#abced4 .1em, transparent .1em);
+    background-size: 100% 1.2em;
+    color: #1d2120;
+    padding: 0;
+    margin: 0;
+}
+
+a
+{
+    text-decoration: none;
+    color: #1d2120;
+}
+
+a.ul
+{
+    text-decoration: underline;
+}
+
+a:hover
+{
+    color: #900;
+}
+
+a:active
+{
+    color: #f00;
+}
+
+h1.pagetitle
+{
+    font-size: 220%;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 0;
+    padding-left: 8%;
+    line-height: 0.9;
+    background: #ba9077;
+}
+
+h2.pagetitle
+{
+    font-size: 110%;
+    padding-left: 8%;
+    padding-top: 0;
+    padding-bottom: 5px;
+    margin: 0;
+    background: #ba9077;
+    font-weight: normal;
+}
+
+p
+{
+    width: 90%;
+    font-size: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    clear: both;
+}
+
+h1.haiku
+{
+    width: 90%;
+    font-size: 250%;
+    font-style: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    line-height: 1.2em;
+    color: #1d2120;
+}
+
+h2.haiku
+{
+    width: 90%;
+    font-size: 180%;
+    font-style: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    line-height: 1.2em;
+    color: #1d2120;
+}
+
+div.haikus
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #1d2120;
+    white-space: nowrap;
+}
+
+div.image
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #1d2120;
+    white-space: nowrap;
+    clear: left;
+}
+
+div>div>h3
+{
+    width: 10%;
+    clear: left;
+    float: left;
+    font-size: 200%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 5%;
+    color: #900;
+    display: inline-block;
+}
+
+div>div>p
+{
+    float: left;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 100%;
+    width: 75%;
+    clear: none;
+    display: inline-block;
+}
+
+#mapid
+{
+    height: 350px;
+    clear: both;
+    width: 90%;
+    font-size: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    clear: both;
+}
+
+div.haikus>div:nth-child(odd)
+{
+    padding-right: 15%;
+}
+
+div.haikus>div:nth-child(even)
+{
+    padding-left: 15%;
+}
+
+h1.toc
+{
+    font-size: 250%;
+    font-style: bold;
+    padding-left: 8%;
+    line-height: 1.2em;
+}
+
+ul.toc
+{
+    padding-left: 8%;
+    margin-left: 1.5em;
+}
+
+nav
+{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    margin-bottom: 5px;
+}
+
+nav>ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding-left: 8%;
+}
+
+nav>ul>li
+{
+    display: inline;
+    padding-right: 2em;
+}
+
+nav>ul>li>a:before
+{
+    content: "\a7\a0\a0";
+}
+
+div.footer
+{
+    width: 100%;
+    text-align: center;
+    clear: both;
+    padding-top: 40px;
+    padding-bottom: 5px;
+    background: #bbb;
+}
+
+div.space
+{
+    clear: both;
+    padding: 10px;
+}
+
+img.beer
+{
+    float: left;
+}
+
+img.svg
+{
+    width: 100%;
+}
+
+div.mainimg
+{
+    position: relative;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+}
+
+@media (min-height:400px)
+{
+    h1.pagetitle
+    {
+        padding-top: 15px;
+        font-size: 300%;
+    }
+
+    h2.pagetitle
+    {
+        font-size: 135%;
+        padding-bottom: 7px;
+    }
+
+    nav
+    {
+        font-size: 120%;
+    }
+
+}
+
+@media (min-height:600px)
+{
+    h1.pagetitle
+    {
+        padding-top: 20px;
+        font-size: 450%;
+    }
+
+    h2.pagetitle
+    {
+        font-size: 220%;
+        padding-bottom: 10px;
+    }
+
+    nav
+    {
+        font-size: 140%;
+    }
+}
+
+@media (min-width:700px)
+{
+    body
+    {
+        background-image: 
+        linear-gradient(90deg, transparent 150px, #abced4 150px, #abced4 152px, transparent 152px),
+        linear-gradient(#abced4 .1em, transparent .1em);
+    }
+
+    h1.haiku
+    {
+        font-size: 350%;
+        width: 50%;
+    }
+
+    h1.images
+    {
+        width: 75%;
+        margin-left: 22%;
+        font-size: 350%;
+    }
+
+    h2.haiku
+    {
+        font-size: 230%;
+        width: 50%;
+    }
+
+    div.haikus
+    {
+        width: 75%;
+        margin-left: 22%
+    }
+
+    p
+    {
+        width: 50%;
+        font-size: 120%;
+    }
+
+    #mapid
+    {
+        width: 50%;
+    }
+
+    div.haikus>div:nth-child(odd)
+    {
+        padding-right: 30%;
+    }
+
+    div.haikus>div:nth-child(even)
+    {
+        padding-left: 30%;
+    }
+
+    div>div>p
+    {
+        font-size: 120%;
+        width: 80%;
+    }
+
+    div>div>h3
+    {
+        font-size: 300%;
+    }
+
+    nav
+    {
+        font-size: 160%;
+        position: absolute;
+        left: 0;
+        width: 200px;
+        padding-top: 2em;
+        margin-right: 10px;
+        line-height: 1.7em;
+        background: none;
+    }
+
+    h1.toc
+    {
+        font-size: 350%;
+        padding-left: 150px;
+    }
+
+    ul.toc
+    {
+        padding-left: 150px;
+    }
+
+    nav>ul
+    {
+        padding-left: 0.5em;
+    }
+
+    nav>ul>li
+    {
+        display: block;
+        padding-right: 0;
+    }
+
+    ul.toc
+    {
+	min-height: 10em;
+    }
+
+    a.toc
+    {
+        font-size: 120%;
+    }
+}
+
+@media (min-width:1100px)
+{
+    h1.images
+    {
+        margin-left: 15%;
+    }
+}
+

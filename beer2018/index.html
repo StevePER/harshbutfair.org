@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>2018 Beer Advent Calendar</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">The advent calendar, 2018</h2>
+    <nav>
+        <ul>
+            <li><a href="24.html">dec 24</a></li>
+            <li><a href="25.html">dec 25</a></li>
+            <li><a href=".">all</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="haiku">The beers so far</h1>
+    <div class="haikus">
+    <div><h3>1</h3><p><a href="1.html"><img class="beer" src="daintons.png"><br><b>Dainton Family Brewery</b><br>Blood Orange New England Rye IPA</a></div><div><h3>2</h3><p><a href="2.html"><img class="beer" src="goliath.png"><br><b>Wychwood Brewery</b><br>Goliath</a></div><div><h3>3</h3><p><a href="3.html"><img class="beer" src="colonialporter.png"><br><b>Colonial Brewing</b><br>Porter</a></div><div><h3>4</h3><p><a href="4.html"><img class="beer" src="leffe.png"><br><b>Leffe</b><br>Leffe Blonde</a></div><div><h3>5</h3><p><a href="5.html"><img class="beer" src="modus.png"><br><b>Modus Operandi</b><br>Former Tenant Red IPA</a></div><div><h3>6</h3><p><a href="6.html"><img class="beer" src="schofferhofer.png"><br><b>Sch&ouml;fferhofer Weizenbier</b><br>Hefeweizen Naturtr&uuml;b</a></div><div><h3>7</h3><p><a href="7.html"><img class="beer" src="moobrew.png"><br><b>Moo Brew</b><br>Stout</a></div><div><h3>8</h3><p><a href="8.html"><img class="beer" src="ripper.png"><br><b>Stone Brewing</b><br>Ripper San Diego Style Pale Ale</a></div><div><h3>9</h3><p><a href="9.html"><img class="beer" src="sunset.png"><br><b>Two Birds Brewing</b><br>Sunset</a></div><div><h3>10</h3><p><a href="10.html"><img class="beer" src="parrotdog.png"><br><b>Parrotdog Brewery</b><br>Falcon APA</a></div><div><h3>11</h3><p><a href="11.html"><img class="beer" src="boddingtons.png"><br><b>Boddingtons</b><br>Draught Bitter</a></div><div><h3>12</h3><p><a href="12.html"><img class="beer" src="exitsaison.png"><br><b>Exit Brewing</b><br>Saison</a></div><div><h3>13</h3><p><a href="13.html"><img class="beer" src="warhog.png"><br><b>Feral Brewing</b><br>War Hog American IPA</a></div><div><h3>14</h3><p><a href="14.html"><img class="beer" src="cwtch.png"><br><b>Tiny Rebel Brewing</b><br>Cwtch Welsh Red Ale</a></div><div><h3>15</h3><p><a href="15.html"><img class="beer" src="kaijukrush.png"><br><b>KAIJU! Beer</b><br>Krush! Tropical Ale</a></div><div><h3>16</h3><p><a href="16.html"><img class="beer" src="champayne.png"><br><b>Edge Brewing Project</b><br>Champayne Brut Lager</a></div><div><h3>17</h3><p><a href="17.html"><img class="beer" src="whiterabbit.png"><br><b>White Rabbit Brewery</b><br>White Ale</a></div><div><h3>18</h3><p><a href="18.html"><img class="beer" src="sidecar.png"><br><b>Sierra Nevada</b><br>Sidecar Orange IPA</a></div><div><h3>19</h3><p><a href="19.html"><img class="beer" src="piratelifeblack.png"><br><b>Pirate Life Brewing</b><br>Black</a></div><div><h3>20</h3><p><a href="20.html"><img class="beer" src="hopsonpointe.png"><br><b>Garage Project</b><br>Hops on Pointe Champagne Pilsener</a></div><div><h3>21</h3><p><a href="21.html"><img class="beer" src="hentyst.png"><br><b>Hawkers Beer</b><br>Rover Henty St Ale</a></div><div><h3>22</h3><p><a href="22.html"><img class="beer" src="seafarer.png"><br><b>Three Weavers Brewing</b><br>Seafarer K&ouml;lsch-Style Ale</a></div><div><h3>23</h3><p><a href="23.html"><img class="beer" src="chuckaboo.png"><br><b>Bodriggy Brewing</b><br>Chuckaboo White IPA</a></div><div><h3>24</h3><p><a href="24.html"><img class="beer" src="5amsaint.png"><br><b>BrewDog</b><br>5AM Saint American Red Ale</a></div><div><h3>25</h3><p><a href="25.html"><img class="beer" src="12days.png"><br><b>Hook Norton Brewery</b><br>12 Days</a></div>
+    </div>
+
+    <div id="space"></div>
+    <div id="space"></div>
+    <div id="mapid"></div>
+    <div id="space"></div>
+    <div id="space"></div>
+
+<script>
+    var mymap = L.map('mapid').setView([0.0, 0.0], 1);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+    L.marker([-38.101431,145.1682663]).addTo(mymap).bindPopup("<a href=\"1.html\"><img src=\"daintons.png\" height=50></a>");L.marker([51.7831975,-1.4902177]).addTo(mymap).bindPopup("<a href=\"2.html\"><img src=\"goliath.png\" height=50></a>");L.marker([-33.9135472,115.1407957]).addTo(mymap).bindPopup("<a href=\"3.html\"><img src=\"colonialporter.png\" height=50></a>");L.marker([50.889393,4.7063767]).addTo(mymap).bindPopup("<a href=\"4.html\"><img src=\"leffe.png\" height=50></a>");L.marker([-33.675873,151.3040263]).addTo(mymap).bindPopup("<a href=\"5.html\"><img src=\"modus.png\" height=50></a>");L.marker([50.0942809,8.656372]).addTo(mymap).bindPopup("<a href=\"6.html\"><img src=\"schofferhofer.png\" height=50></a>");L.marker([-42.7341163,147.2462613]).addTo(mymap).bindPopup("<a href=\"7.html\"><img src=\"moobrew.png\" height=50></a>");L.marker([33.115659,-117.1221677]).addTo(mymap).bindPopup("<a href=\"8.html\"><img src=\"ripper.png\" height=50></a>");L.marker([-37.8347529,144.8832539]).addTo(mymap).bindPopup("<a href=\"9.html\"><img src=\"sunset.png\" height=50></a>");L.marker([-41.3271748,174.7976089]).addTo(mymap).bindPopup("<a href=\"10.html\"><img src=\"parrotdog.png\" height=50></a>");L.marker([53.7616823,-2.6192046]).addTo(mymap).bindPopup("<a href=\"11.html\"><img src=\"boddingtons.png\" height=50></a>");L.marker([-38.0326205,145.2012116]).addTo(mymap).bindPopup("<a href=\"12.html\"><img src=\"exitsaison.png\" height=50></a>");L.marker([-31.79788,116.0345343]).addTo(mymap).bindPopup("<a href=\"13.html\"><img src=\"warhog.png\" height=50></a>");L.marker([51.5905827,-3.1940603]).addTo(mymap).bindPopup("<a href=\"14.html\"><img src=\"cwtch.png\" height=50></a>");L.marker([-38.032584,145.201202]).addTo(mymap).bindPopup("<a href=\"15.html\"><img src=\"kaijukrush.png\" height=50></a>");L.marker([-37.7922642,144.9834434]).addTo(mymap).bindPopup("<a href=\"16.html\"><img src=\"champayne.png\" height=50></a>");L.marker([-38.1653021,144.3602993]).addTo(mymap).bindPopup("<a href=\"17.html\"><img src=\"whiterabbit.png\" height=50></a>");L.marker([39.7233638,-121.8181326]).addTo(mymap).bindPopup("<a href=\"18.html\"><img src=\"sidecar.png\" height=50></a>");L.marker([-34.9053852,138.5637414]).addTo(mymap).bindPopup("<a href=\"19.html\"><img src=\"piratelifeblack.png\" height=50></a>");L.marker([-41.29521,174.7328174]).addTo(mymap).bindPopup("<a href=\"20.html\"><img src=\"hopsonpointe.png\" height=50></a>");L.marker([-37.718126,144.982611]).addTo(mymap).bindPopup("<a href=\"21.html\"><img src=\"hentyst.png\" height=50></a>");L.marker([33.961158,-118.376972]).addTo(mymap).bindPopup("<a href=\"22.html\"><img src=\"seafarer.png\" height=50></a>");L.marker([-37.8001587,144.992266]).addTo(mymap).bindPopup("<a href=\"23.html\"><img src=\"chuckaboo.png\" height=50></a>");L.marker([57.3710768,-2.0560554]).addTo(mymap).bindPopup("<a href=\"24.html\"><img src=\"5amsaint.png\" height=50></a>");L.marker([51.996703,-1.4960117]).addTo(mymap).bindPopup("<a href=\"25.html\"><img src=\"12days.png\" height=50></a>");
+
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

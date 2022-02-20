@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>2020 Twelve Beers of Christmas</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">12 Beers of Christmas, 2020</h2>
+    <nav>
+        <ul>
+            <li><a href=".">all</a></li>
+            <li><a href="1.html">I</a></li>
+            <li><a href="2.html">II</a></li>
+            <li><a href="3.html">III</a></li>
+            <li><a href="4.html">IV</a></li>
+            <li><a href="5.html">V</a></li>
+            <li><a href="6.html">VI</a></li>
+            <li><a href="7.html">VII</a></li>
+            <li><a href="8.html">VIII</a></li>
+            <li><a href="9.html">IX</a></li>
+            <li><a href="10.html">X</a></li>
+            <li><a href="11.html">XI</a></li>
+            <li><a href="12.html">XII</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="haiku">The beers</h1>
+    <div class="haikus">
+        <img class="beer" src="12_small.png" width="18" height="32"><h2><a href="12.html">Twelve IPAs drumming</a></h2>
+        <img class="beer" src="11_small.png" width="18" height="32"><h2><a href="11.html">Eleven white stouts piping</a></h2>
+        <img class="beer" src="10_small.png" width="18" height="32"><h2><a href="10.html">Ten NEIPAs leaping</a></h2>
+        <img class="beer" src="09_small.png" width="18" height="32"><h2><a href="9.html">Nine sours dancing</a></h2>
+        <img class="beer" src="08_small.png" width="18" height="32"><h2><a href="8.html">Eight red ales milking</a></h2>
+        <img class="beer" src="07_small.png" width="18" height="32"><h2><a href="7.html">Seven IPAs swimming</a></h2>
+        <img class="beer" src="06_small.png" width="18" height="32"><h2><a href="6.html">Six milk stouts laying</a></h2>
+        <img class="beer" src="05_small.png" width="18" height="32"><h2><a href="5.html">Five amber ales</a></h2>
+        <img class="beer" src="04_small.png" width="18" height="32"><h2><a href="4.html">Four fruity NEIPAs</a></h2>
+        <img class="beer" src="03_small.png" width="18" height="32"><h2><a href="3.html">Three brown ales</a></h2>
+        <img class="beer" src="02_small.png" width="18" height="32"><h2><a href="2.html">Two IPAs</a></h2>
+        <img class="beer" src="01_small.png" width="18" height="32"><h2><a href="1.html">and an XPA in a pear tree</a></h2>
+    </div>
+
+    <div id="space"></div>
+    <div id="space"></div>
+    <div id="mapid"></div>
+    <div id="space"></div>
+    <div id="space"></div>
+
+<script>
+    var mymap = L.map('mapid').setView([-30, 135], 4);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+    L.marker([-31.9415215,115.8397749]).addTo(mymap).bindPopup("<a href=\"01.html\">One</a>");L.marker([-33.7638036,151.270241]).addTo(mymap).bindPopup("<a href=\"02.html\">Two</a>");L.marker([-38.232539,145.056880]).addTo(mymap).bindPopup("<a href=\"03.html\">Three</a>");L.marker([-33.6472763,115.3403983]).addTo(mymap).bindPopup("<a href=\"04.html\">Four</a>");L.marker([-31.8551758,115.8963115]).addTo(mymap).bindPopup("<a href=\"05.html\">Five</a>");L.marker([-33.6472763,115.3403983]).addTo(mymap).bindPopup("<a href=\"06.html\">Six</a>");L.marker([-34.8445389,138.5074797]).addTo(mymap).bindPopup("<a href=\"07.html\">Seven</a>");L.marker([-32.0424545,115.8188891]).addTo(mymap).bindPopup("<a href=\"08.html\">Eight</a>");L.marker([-37.8099131,145.0032892]).addTo(mymap).bindPopup("<a href=\"09.html\">Nine</a>");L.marker([-37.8100396,144.9019061]).addTo(mymap).bindPopup("<a href=\"10.html\">Ten</a>");L.marker([-34.7720113,149.6880799]).addTo(mymap).bindPopup("<a href=\"11.html\">Eleven</a>");L.marker([-28.0786394,153.442419]).addTo(mymap).bindPopup("<a href=\"12.html\">Twelve</a>");
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

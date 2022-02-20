@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Beer of the Day #8</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">The advent calendar, 2018</h2>
+    <nav>
+        <ul>
+            <li><a href="7.html">dec 7</a></li>
+            <li><a href="8.html">dec 8</a></li>
+            <li><a href="9.html">dec 9</a></li>
+            <li><a href=".">all</a></li>
+        </ul>
+    </nav>
+
+
+    <h1 class="haiku">Stone Brewing Ripper Pale Ale</h1>
+
+    <div class="haikus">
+    <div>
+    <h3>8</h3>
+    <p>
+    <img class="beer" src="ripper.png" width="161" height="264" alt="Stone Brewing Ripper Pale Ale">
+    <b>Ripper Pale Ale</b><br>
+    <a href="https://stonebrewing.com">Stone Brewing</a><br>
+    California, USA<br>
+    <i>355mL can</i><br>
+    <i>5.7% Alc/Vol</i><br>
+    </div>
+    </div>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Beer</h2>
+    <p>
+    When it came to creating Ripper, we drew inspiration from the coastal surf cultures of SoCal and Oz. Sourcing classic Cascade from the Pacific Northwest and Australian Galaxy hops from, yes, Australia, we made a beer both lovers of frothy peaks and hoppy green buds will be stoked about. At the same time, we stayed true to our San Diego roots by pushing the hop boundaries of this style. While some might think it lingers on an edge far closer to an IPA, with all the dry-hop flavour and aroma, it's actually right in line with the current-day interpretation of a West Coast pale. Ours just so happens to have an Aussie accent that's cascading with a juicy amount of grapefruit and passion fruit hoppiness. So veg out or venture out. Either way, rip one open and taste this awesome golden nectar!
+    </p>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Brewery</h2>
+    <p>
+    Founded by Greg Koch and Steve Wagner, Stone Brewing has come a long way since opening up in San Diego, California in 1996. We have been listed on the Inc. 500 | 5000 Fastest Growing Private Companies list 11 times, and has been called the &#x201c;All-time Top Brewery on Planet Earth&#x201d; by BeerAdvocate magazine twice. Stone Brewing is the eighth-largest craft brewer in the U.S. and with our breweries in Richmond, Virginia &amp; Berlin, Germany, we join artisanal brewers across the world in the quest to show the public that there are more, and better, choices beyond the world of industrial beer.
+    </p>
+
+<div id="mapid"></div>
+<div class="space"></div>
+<div class="space"></div>
+
+<h2 class="haiku">Beer Fact of the Day</h2>
+<p>
+In July 2010, a Baltic Sea shipwreck dated between 1800 to 1830 yielded many bottles of what was thought to be the world's oldest champagne.
+</p><p>
+Five of the bottles later proved to be the oldest drinkable beer yet found. The brew has already been sampled by four professional beer tasters.
+</p><p>
+&#x201c;They said that it did taste very old, which is no surprise, with some burnt notes.&#x201d;
+</p>
+
+<script>
+var mymap = L.map('mapid').setView([33.115659,-117.1221677], 7);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+	L.marker([33.115659,-117.1221677]).addTo(mymap)
+    .bindPopup("<b>Stone Brewing</b><br />Escondido<br>California").openPopup();
+
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

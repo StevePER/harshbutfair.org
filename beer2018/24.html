@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>Beer of the Day #24</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">The advent calendar, 2018</h2>
+    <nav>
+        <ul>
+            <li><a href="23.html">dec 23</a></li>
+            <li><a href="24.html">dec 24</a></li>
+            <li><a href="25.html">dec 25</a></li>
+            <li><a href=".">all</a></li>
+        </ul>
+    </nav>
+
+
+    <h1 class="haiku">BrewDog 5AM Saint</h1>
+
+    <div class="haikus">
+    <div>
+    <h3>24</h3>
+    <p>
+    <img class="beer" src="5amsaint.png" width="86" height="264" alt="BrewDog 5AM Saint">
+    <b>5AM Saint American Red Ale</b><br>
+    <a href="https://www.brewdog.com">BrewDog</a><br>
+    Scotland<br>
+    <i>330mL bottle</i><br>
+    <i>5.0% Alc/Vol</i><br>
+    </div>
+    </div>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Beer</h2>
+    <p>
+    5AM is clarity condensed into a single moment. Everything laid out before you is static, but nothing is set. The road runs straight into the shimmering distance.
+    </p><p>
+    It's time to take that ride.
+    </p><p>
+    5AM Saint is five malts at 5% ABV.
+    </p><p>
+    Out of this order and stability comes the rush of the pack. Berry and caramel riding alongside marmalade and chocolate. Spice and toast jostle with lychee and biscuit.
+    </p><p>
+    The needle flicks to all points of the compass. It drives you towards the horizon, towards the vanishing point. And it keeps going...
+    </p>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Brewery</h2>
+    <p>
+    Martin and James were bored of the industrially brewed lagers and stuffy ales that dominated the UK beer market. We decided the best way to fix this undesirable predicament was to brew our own. Consequently in April 2007 BrewDog was born.
+    </p><p>
+    Both only 24 at the time, we leased a building in Fraserburgh, got some scary bank loans, spent all our money on stainless steel and started making some hardcore craft beers.
+    </p><p>
+    We brewed tiny batches, filled bottles by hand and sold our beers at local markets and out of the back of our beat up old van.
+    </p><p>
+    Ten years later, BrewDog has over 1,000 employees, 70,000 shareholders,
+    and 46 bars. In February 2018, they announced plans to build a 
+    $30 million brewery in Brisbane.
+    </p>
+
+<div id="mapid"></div>
+<div class="space"></div>
+<div class="space"></div>
+
+<h2 class="haiku">Beer Fact of the Day</h2>
+<p>
+There are currently 567 Red Lion pubs in the UK, making it the most
+common pub name. There are also 148 White Lions, 107 Golden Lions,
+68 Lions, and 19 Old Red Lions. 
+</p>
+
+
+<script>
+var mymap = L.map('mapid').setView([57.3710768,-2.0560554], 7);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+	L.marker([57.3710768,-2.0560554]).addTo(mymap)
+    .bindPopup("<b>BrewDog</b><br />Ellon<br>Scotland").openPopup();
+
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+body
+{
+    background: black;
+}
+
+img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+@media (min-aspect-ratio: 676/1024)
+{
+    img
+    {
+        height: 100%;
+    }
+}
+
+@media (max-aspect-ratio: 676/1024)
+{
+    img
+    {
+        width: 100%;
+    }
+}
+

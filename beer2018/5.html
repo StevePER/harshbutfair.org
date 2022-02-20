@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>Beer of the Day #5</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">The advent calendar, 2018</h2>
+    <nav>
+        <ul>
+            <li><a href="4.html">dec 4</a></li>
+            <li><a href="5.html">dec 5</a></li>
+            <li><a href="6.html">dec 6</a></li>
+            <li><a href=".">all</a></li>
+        </ul>
+    </nav>
+
+
+    <h1 class="haiku">Modus Operandi Former Tenant Red IPA</h1>
+
+    <div class="haikus">
+    <div>
+    <h3>5</h3>
+    <p>
+    <img class="beer" src="modus.png" width="112" height="264" alt="Modus Operandi Former Tenant">
+    <b>Former Tenant Red IPA</b><br>
+    <a href="https://www.mobrewing.com.au">Modus Operandi</a><br>
+    New South Wales<br>
+    <i>500mL can</i><br>
+    <i>7.8% Alc/Vol</i><br>
+    </div>
+    </div>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Beer</h2>
+    <p>
+    Champion Australian craft beer in 2014, this beer is bursting with aromas of passionfruit and mango due to a heavy hand on the mosaic and galaxy dry hops, this ruby red IPA has a complex blend of citrusy hops and savoury caramel malt flavour followed by a slightly sweet finish.
+    </p>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Brewery</h2>
+    <p>
+    Always dreaming but finally formalising the concept in 2012, it all started in a motor home traveling around the U S of A, blaring Creedence and delving deeper into the craft revolution. We discovered every nook and cranny of the USA craft beer world for six months, brewing, talking, cleaning, talking, cleaning, brewing, and yes, drinking a lot of beer (tough I know).
+    </p><p>
+    We returned home to our beloved Northern Beaches with heads full of beer lovin and inspired to brew the best beer in Australia. We are larrikins at heart, but when it comes to our Modus Operandi (Latin for Method of Operation) which put simply is, beer first, no shortcuts, this is where we get real. Our beer is always brewed with fresh, live yeast flown in from the USA and the finest specialty malts and hops sourced from all over the globe. Every drop of Modus Operandi beer is brewed and packaged in our Mona Vale brewery. Every single Modus Operandi can and keg is permanently kept cold and always display a packaged-on date. This means you know you're drinking fresh, local beer. These methods of operation may cost more but, we think, the proof is in the brew.
+    </p>
+
+<div id="mapid"></div>
+<div class="space"></div>
+<div class="space"></div>
+
+<h2 class="haiku">Beer Fact of the Day</h2>
+<p>
+Steven Petrosino drank one litre of beer in 1.3 seconds on June 22,
+1977, smashing the previous world record of 2.3 seconds set several
+years earlier. The record remained undefeated until 1991 when
+Guinness removed all records related to alcohol consumption from
+their record book.
+</p>
+
+<script>
+var mymap = L.map('mapid').setView([-33.675873,151.3040263], 7);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+	L.marker([-33.675873,151.3040263]).addTo(mymap)
+    .bindPopup("<b>Modus Operandi</b><br />Mona Vale<br>New South Wales").openPopup();
+
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

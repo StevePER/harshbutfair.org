@@ -1,0 +1,97 @@
+<html>
+<head>
+    <title>Beer #6</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">12 Beers of Christmas, 2020</h2>
+    <nav>
+        <ul>
+            <li><a href=".">all</a></li>
+            <li><a href="1.html">I</a></li>
+            <li><a href="2.html">II</a></li>
+            <li><a href="3.html">III</a></li>
+            <li><a href="4.html">IV</a></li>
+            <li><a href="5.html">V</a></li>
+            <li><a href="6.html">VI</a></li>
+            <li><a href="7.html">VII</a></li>
+            <li><a href="8.html">VIII</a></li>
+            <li><a href="9.html">IX</a></li>
+            <li><a href="10.html">X</a></li>
+            <li><a href="11.html">XI</a></li>
+            <li><a href="12.html">XII</a></li>
+        </ul>
+    </nav>
+
+
+    <h1 class="haiku">Black Brewing Bao Bao Milk Stout</h1>
+
+    <div class="haikus">
+    <div>
+    <h3>6</h3>
+    <p>
+    <img class="beer" src="blackbrewing.png" width="155" height="264" alt="Black Brewing Bao
+    Bao Milk Stout">
+    <b>Bao Bao Milk Stout</b><br>
+    <a href="https://blackbrewingco.com.au/">Black Brewing Co.</a><br>
+    Wilyabrup, Western Australia<br>
+    <i>375mL can</i><br>
+    <i>4.5% Alc/Vol</i><br>
+    </div>
+    </div>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Beer</h2>
+    <p>
+    A milk stout with Lactose. Rich chocolate and coffee notes linger on the palate as
+    the smooth sweet lactose glides over the tongue. Brewed with Chocolate, Caramel and
+    Dark Roast malts Bao Bao is a balanced milk stout with no overly cloying sweetness,
+    but rather a balance between bitterness from the rich malts and hops balanced with
+    the hops and lactose.
+    </p>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Brewery</h2>
+    <p>
+    Generous, bold and wild at heart. That's Black Brewing Co. We make some of
+    Australia's most uncompromising craft beers from our home, on Caves Road, in
+    Wilyabrup, Margaret River.
+    </p><p>
+    Our beers tell a refreshing tale of time and place, inspired by the Margaret River
+    region, the Indian Ocean and Western Australia's incredible produce and people.  Our
+    aim is to develop and discover new brews all the time, and a sunny day of tastings
+    at our Caves Road brewery and restaurant could lead to many places.
+    </p>
+
+<div id="mapid"></div>
+<div class="space"></div>
+<div class="space"></div>
+
+
+<script>
+var mymap = L.map('mapid').setView([-33.6472763,115.3403983], 9);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+	L.marker([-33.6472763,115.3403983]).addTo(mymap)
+    .bindPopup("<b>Black Brewing</b><br />Wilyabrup<br />Western Australia").openPopup();
+
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

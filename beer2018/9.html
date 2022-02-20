@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>Beer of the Day #9</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">The advent calendar, 2018</h2>
+    <nav>
+        <ul>
+            <li><a href="8.html">dec 8</a></li>
+            <li><a href="9.html">dec 9</a></li>
+            <li><a href="10.html">dec 10</a></li>
+            <li><a href=".">all</a></li>
+        </ul>
+    </nav>
+
+
+    <h1 class="haiku">Two Birds Sunset Ale</h1>
+
+    <div class="haikus">
+    <div>
+    <h3>9</h3>
+    <p>
+    <img class="beer" src="sunset.png" width="86" height="264" alt="Two Birds Sunset Ale">
+    <b>Sunset Ale</b><br>
+    <a href="https://www.twobirdsbrewing.com.au">Two Birds Brewing</a><br>
+    Victoria<br>
+    <i>330mL bottle</i><br>
+    <i>4.6% Alc/Vol</i><br>
+    </div>
+    </div>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Beer</h2>
+    <p>
+    Sunset is an ode to WA's ruby red sunsets over the Indian Ocean, 
+    and the many adventures we had when growing up watching them.
+    </p><p>
+    This Amber Ale is a complex blend of 9 different malts, creating
+    a rich and inviting beer with pine, grapefruit and toffee notes,
+    wrapped up in a light, roasty finish. Perfect for drinking while
+    the sun goes down.
+    </p>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Brewery</h2>
+    <p>
+    Jayne Lewis and Danielle Allen are Two Birds Brewing; the driving force behind Australia's first female owned brewing company. Located in Spotswood, an inner-western suburb of Melbourne, this award-winning brewery typifies everything that is good about the craft beer industry in Australia.
+    </p><p>
+These Two Birds are trailblazing their way into the record books by developing sophisticated, approachable beers that can be enjoyed with mates at a backyard BBQ or on the dinner table with your favourite meal.
+    </p>
+
+<div id="mapid"></div>
+<div class="space"></div>
+<div class="space"></div>
+
+<h2 class="haiku">Beer Fact of the Day</h2>
+<p>
+The world record for the most pints of beer balanced on one's head
+is 237 pints.
+</p>
+
+
+<script>
+var mymap = L.map('mapid').setView([-37.8347529,144.8832539], 7);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+	L.marker([-37.8347529,144.8832539]).addTo(mymap)
+    .bindPopup("<b>Two Birds Brewing</b><br />Spotswood<br>Victoria").openPopup();
+
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

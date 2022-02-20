@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>Beer of the Day #18</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">The advent calendar, 2018</h2>
+    <nav>
+        <ul>
+            <li><a href="17.html">dec 17</a></li>
+            <li><a href="18.html">dec 18</a></li>
+            <li><a href="19.html">dec 19</a></li>
+            <li><a href=".">all</a></li>
+        </ul>
+    </nav>
+
+
+    <h1 class="haiku">Sierra Nevada Sidecar Orange IPA</h1>
+
+    <div class="haikus">
+    <div>
+    <h3>18</h3>
+    <p>
+    <img class="beer" src="sidecar.png" width="180" height="264" alt="Sidecar Orange IPA">
+    <b>Sidecar Orange IPA</b><br>
+    <a href="https://sierranevada.com">Sierra Nevada</a><br>
+    California, USA<br>
+    <i>12 fl oz (341 mL) bottle</i><br>
+    <i>6.8% Alc/Vol</i><br>
+    </div>
+    </div>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Beer</h2>
+    <p>
+    We pushed the complex and citrus-heavy flavors of hops to a new level with this orange-infused IPA. Combining bright and bold hops with real orange in the fermenter creates layers of citrus-crazy flavors, yet it maintains a balance and a crisp hop bite that make it the perfect aromatic IPA.
+    </p>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Brewery</h2>
+    <p>
+    Sierra Nevada Brewing was founded in 1979 when founders Ken Grossman and Paul Camusi expanded their homebrewing hobby into a brewery in Chico, California.  With $50,000 in loans from friends and family, Grossman and Camusi rented a (280 m&#xb2;) warehouse and pieced together discarded dairy equipment and scrapyard metal to create their brewing equipment. They were later able to acquire second-hand copper brewing kettles from Germany before moving to their larger, current brewing facility in 1989.
+    </p>
+    <p>
+    Sierra Nevada has now grown to be the seventh-largest brewing company in the
+    United States.
+    </p>
+
+<div id="mapid"></div>
+<div class="space"></div>
+<div class="space"></div>
+
+<h2 class="haiku">Beer Fact of the Day</h2>
+<p>
+Beer is the most widely consumed alcoholic drink in the world. It is also the
+third most popular drink overall, after water and tea.
+</p>
+
+
+<script>
+var mymap = L.map('mapid').setView([39.7233638,-121.8181326], 7);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+	L.marker([39.7233638,-121.8181326]).addTo(mymap)
+    .bindPopup("<b>Sierra Nevada</b><br />Chico<br>California").openPopup();
+
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Beer of the Day #22</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">The advent calendar, 2018</h2>
+    <nav>
+        <ul>
+            <li><a href="21.html">dec 21</a></li>
+            <li><a href="22.html">dec 22</a></li>
+            <li><a href="23.html">dec 23</a></li>
+            <li><a href=".">all</a></li>
+        </ul>
+    </nav>
+
+
+    <h1 class="haiku">Three Weavers Seafarer</h1>
+
+    <div class="haikus">
+    <div>
+    <h3>22</h3>
+    <p>
+    <img class="beer" src="seafarer.png" width="156" height="264" alt="Three Weavers Seafarer">
+    <b>Seafarer</b><br>
+    <a href="https://www.threeweavers.la">Three Weavers</a><br>
+    California, USA<br>
+    <i>355mL can</i><br>
+    <i>4.8% Alc/Vol</i><br>
+    </div>
+    </div>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Beer</h2>
+    <p>
+    Channeling the traditional, light hybrid ale from Koln, Germany, Seafarer is made with German Pilsner Malt and Noble Hop varieties. Our crisp, pale Kolsch is lively, refreshing and a perfect partner for the everyday journey that is life.
+    </p>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Brewery</h2>
+    <p>
+    The brewery, just over two years old, was founded by certified financial planner and homebrewer Lynne Weaver, who thought a craft brewery could be a captivating intersection of her interests.
+    </p>
+    <p>
+    Three Weavers doesn't focus on the trophy IPAs or the envelope-pushing wild ales that beer geeks line up to purchase. Instead, the beers are about striking a balance between traditional techniques and styles and showcasing the best ingredients in the world. From Kölsch to pale ale to English porter, these pints aren't flashy &mdash; they're polished and nuanced. Sleeper brews among a field of hot-rod beer.
+    </p>
+
+<div id="mapid"></div>
+<div class="space"></div>
+<div class="space"></div>
+
+<h2 class="haiku">Beer Fact of the Day</h2>
+<p>
+Beer cans in Japan have braille on them so blind people don't confuse alcoholic drinks with soft drinks.
+</p>
+
+
+<script>
+var mymap = L.map('mapid').setView([33.961158,-118.376972], 7);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+	L.marker([33.961158,-118.376972]).addTo(mymap)
+    .bindPopup("<b>Three Weavers Brewing</b><br />Inglewood<br>California").openPopup();
+
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

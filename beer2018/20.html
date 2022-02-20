@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>Beer of the Day #20</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">The advent calendar, 2018</h2>
+    <nav>
+        <ul>
+            <li><a href="19.html">dec 19</a></li>
+            <li><a href="20.html">dec 20</a></li>
+            <li><a href="21.html">dec 21</a></li>
+            <li><a href=".">all</a></li>
+        </ul>
+    </nav>
+
+
+    <h1 class="haiku">Garage Project Hops On Pointe</h1>
+
+    <div class="haikus">
+    <div>
+    <h3>20</h3>
+    <p>
+    <img class="beer" src="hopsonpointe.png" width="167" height="264" alt="Hops On Pointe">
+    <b>Hops On Pointe</b><br>
+    <a href="https://garageproject.co.nz/">Garage Project</a><br>
+    New Zealand<br>
+    <i>330mL can</i><br>
+    <i>6.7% Alc/Vol</i><br>
+    </div>
+    </div>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Beer</h2>
+    <p>
+    Brewed by Garage Project for the Royal New Zealand Ballet, Hops on Pointe teases the boundaries between high and low culture.
+    </p><p>
+    Brewed with premium German malts, Nelson Sauvin hops and finished with a champagne yeast, the result is a pale gold lager with a crisp, clean palate, rich tropical fruit aromas and tight champagne bubbles.
+    </p>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Brewery</h2>
+    <p>
+    Garage Project is an independent New Zealand brewery based in Aro Valley, Wellington. The brewery was founded in 2011 by brothers Ian and Pete Gillespie and Jos Ruffell, who transformed a dilapidated car garage to begin brewing 50 litres at a time - 24 new beers in 24 weeks.
+    </p><p>
+    Garage Project's aim is to create unique and beautiful beers, to push boundaries, reinterpret styles and challenge the notions of what beer can be. To date the brewery has created over 300 different beers. 
+    </p><p>
+    Garage Project was named the 2017 New Zealand Brewery of the Year
+    at the New Zealand Brewers Guidl Awards.
+    </p>
+
+<div id="mapid"></div>
+<div class="space"></div>
+<div class="space"></div>
+
+<h2 class="haiku">Beer Fact of the Day</h2>
+<p>
+The Czech Republic consumed 143 litres of beer per person per year
+in 2016, which is an average of just under 400mL per day. They
+were well ahead of second placed Namibia, where they consumed only
+108 litres of beer per person.
+</p>
+
+
+<script>
+var mymap = L.map('mapid').setView([-41.29521,174.7328174], 7);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+	L.marker([-41.29521,174.7328174]).addTo(mymap)
+    .bindPopup("<b>Garage Project</b><br />Wellington<br>New Zealand").openPopup();
+
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

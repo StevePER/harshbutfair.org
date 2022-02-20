@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>Beer of the Day #4</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">The advent calendar, 2018</h2>
+    <nav>
+        <ul>
+            <li><a href="3.html">dec 3</a></li>
+            <li><a href="4.html">dec 4</a></li>
+            <li><a href="5.html">dec 5</a></li>
+            <li><a href=".">all</a></li>
+        </ul>
+    </nav>
+
+
+    <h1 class="haiku">Leffe Blonde</h1>
+
+    <div class="haikus">
+    <div>
+    <h3>4</h3>
+    <p>
+    <img class="beer" src="leffe.png" width="170" height="264" alt="Leffe Blonde">
+    <b>Leffe Blonde</b><br>
+    <a href="https://leffe.com/en">Leffe</a><br>
+    Belgium<br>
+    <i>330mL bottle</i><br>
+    <i>6.6% Alc/Vol</i><br>
+    </div>
+    </div>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Beer</h2>
+    <p>
+    Age-old expertise and the combination of pale malt, water, hop and yeast lend Leffe Blond its subtle taste and golden colour, which manages to catch and reflect the light. Hints of vanilla and clove infuse the beer with an even smoother flavour, which best expresses itself in a Leffe chalice, simultaneously allowing the soft, fresh essence of this beer to unveil its true elegance.
+    </p>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Brewery</h2>
+    <p>
+    The Abbey of Leffe was founded in 1152, and like many monasteries,
+    started brewing their own beer in 1240. Using knowledge passed from generation to generation and ingredients found in the wild near the abbey, the canons developed a unique ale with a subtle taste and high alcohol content, brewed only at the abbey. 
+    </p>
+    <p>
+    In 1952, production of Leffe beer moved to the Lootvoet brewery,
+    which was later bought by Interbrew (now AB InBev). Leffe beer is
+    now brewed at the Stella Artois brewery in Leuven.
+    </p>
+
+<div id="mapid"></div>
+<div class="space"></div>
+<div class="space"></div>
+
+<h2 class="haiku">Beer Fact of the Day</h2>
+<p>
+The Weihenstephan Brewery in Bavaria, Germany, is generally considered
+to be the world's oldest. Brewing started at the Weihenstephan Abbey
+in 1040 but was later taken over by the State of Bavaria in 1803 when
+the monastery and brewry were secularised.
+</p>
+
+
+<script>
+var mymap = L.map('mapid').setView([50.889393,4.7063767], 7);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+	L.marker([50.889393,4.7063767]).addTo(mymap)
+    .bindPopup("<b>Stella Artois Brewery</b><br />Leuven<br>Belgium").openPopup();
+
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

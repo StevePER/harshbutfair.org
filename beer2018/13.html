@@ -1,0 +1,89 @@
+<html>
+<head>
+    <title>Beer of the Day #13</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">The advent calendar, 2018</h2>
+    <nav>
+        <ul>
+            <li><a href="12.html">dec 12</a></li>
+            <li><a href="13.html">dec 13</a></li>
+            <li><a href="14.html">dec 14</a></li>
+            <li><a href=".">all</a></li>
+        </ul>
+    </nav>
+
+
+    <h1 class="haiku">Feral War Hog</h1>
+
+    <div class="haikus">
+    <div>
+    <h3>13</h3>
+    <p>
+    <img class="beer" src="warhog.png" width="171" height="264" alt="Feral Warhog">
+    <b>War Hog</b><br>
+    <a href="https://www.feralbrewing.com.au">Feral Brewing</a><br>
+    Western Australia<br>
+    <i>375mL can</i><br>
+    <i>7.5% Alc/Vol</i><br>
+    </div>
+    </div>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Beer</h2>
+    <p>
+    Prepare to be tagged and bagged as this Full Metal Jacket of an IPA rains an apocalyptic hellfire of clustered hops and passionfruit aromas upon the senses. There's nowhere to hide, so gear up, sound off, and blast &#x201c;Ride of the Valkyries&#x201d; at full volume, because, soldier, you're at war. 
+    </p><p>
+    We love the taste of IPA in the morning. 
+    </p><p>
+    Rated 98 out of 100 on Ratebeer.com
+    </p>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Brewery</h2>
+    <p>
+    Let's be clear. We aren't a craft brewery, we're a brewery; we don't brew craft beer, we brew beer.
+    We don't care how others label it, we just want you to enjoy it because you want to. Because it tastes damn good.
+    </p><p>
+    Whether in the brewery, or in the restaurant, we champion simple, honest and exceptional ingredients and artistry; sustainable practices driven by our Swan Valley neighbours. Because this isn't just about beer, it's about something bigger: a movement. And at the primordial centre of the movement, real folk who toil, without fanfare, in the pursuit of perfection, because we love it.
+    </p>
+
+<div id="mapid"></div>
+<div class="space"></div>
+<div class="space"></div>
+
+<h2 class="haiku">Beer Fact of the Day</h2>
+<p>
+Collecting beer mats is known as tegestology.
+And if you collect beer bottles you are a labeorphilist.
+</p>
+
+
+<script>
+var mymap = L.map('mapid').setView([-31.79788,116.0345343], 7);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+	L.marker([-31.79788,116.0345343]).addTo(mymap)
+    .bindPopup("<b>Feral Brewing</b><br />Baskerville<br>Western Australia").openPopup();
+
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

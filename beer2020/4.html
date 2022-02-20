@@ -1,0 +1,97 @@
+<html>
+<head>
+    <title>Beer #4</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">12 Beers of Christmas, 2020</h2>
+    <nav>
+        <ul>
+            <li><a href=".">all</a></li>
+            <li><a href="1.html">I</a></li>
+            <li><a href="2.html">II</a></li>
+            <li><a href="3.html">III</a></li>
+            <li><a href="4.html">IV</a></li>
+            <li><a href="5.html">V</a></li>
+            <li><a href="6.html">VI</a></li>
+            <li><a href="7.html">VII</a></li>
+            <li><a href="8.html">VIII</a></li>
+            <li><a href="9.html">IX</a></li>
+            <li><a href="10.html">X</a></li>
+            <li><a href="11.html">XI</a></li>
+            <li><a href="12.html">XII</a></li>
+        </ul>
+    </nav>
+
+
+    <h1 class="haiku">Rocky Ridge Baby Peach NEIPA</h1>
+
+    <div class="haikus">
+    <div>
+    <h3>4</h3>
+    <p>
+    <img class="beer" src="rockyridge.png" width="139" height="264" alt="Rocky Ridge Baby Peach NEIPA">
+    <b>Baby Peach New England IPA</b><br>
+    <a href="https://www.rockyridgebrewing.com.au/">Rocky Ridge Brewing Co.</a><br>
+    Busselton, Western Australia<br>
+    <i>375 mL can</i><br>
+    <i>4.0% Alc/Vol</i><br>
+    </div>
+    </div>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Beer</h2>
+    <p>
+    A take on Peach Invasion which was originally brewed in collaboration with the
+    legends from Dainton Brewing in Melbourne. We loved our Peach NEIPA so much that we
+    decided to give people the same great flavour at a lower ABV so you can throw back a
+    few more of these in a session.
+    </p>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Brewery</h2>
+    <p>
+    Five generations have worked our family farm &#x201c;Rocky Ridge&#x201d; in a variety of different
+    forms of agriculture. Most recently; dairy and beef. With a new generation comes new
+    ideas and different perspectives, as well as a passion for and love of fresh,
+    quality beer.
+    </p><p>
+    Our story begins with the search for delicious, fresh beer and the thought; &#x201c;why
+    doesn't anyone grow hops here?&#x201d;. After some research and a few phonecalls the answer
+    became apparent: &#x201c;They don't grow there&#x201d;. Never tell a farmer something won't grow.
+    Fast forward a year and our quarter acre trial of 120 rhizomes has flourished,
+    Cascade, Chinook, Saaz, Goldings, POR, Red Earth, Supa Alpha and a secret trial crop
+    are all laden with fruit for harvest.
+    </p>
+
+<div id="mapid"></div>
+<div class="space"></div>
+<div class="space"></div>
+
+<script>
+var mymap = L.map('mapid').setView([-33.6472763,115.3403983], 7);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+	L.marker([-33.6472763,115.3403983]).addTo(mymap)
+    .bindPopup("<b>Rocky Ridge Brewing Co.</b><br />Busselton<br>Western Australia").openPopup();
+
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

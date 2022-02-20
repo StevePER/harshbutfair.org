@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>Beer of the Day #14</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <link rel="stylesheet" href="../harsh.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="index.html"><h1 class="pagetitle">Beer.</h1></a>
+    <h2 class="pagetitle">The advent calendar, 2018</h2>
+    <nav>
+        <ul>
+            <li><a href="13.html">dec 13</a></li>
+            <li><a href="14.html">dec 14</a></li>
+            <li><a href="15.html">dec 15</a></li>
+            <li><a href=".">all</a></li>
+        </ul>
+    </nav>
+
+
+    <h1 class="haiku">Tiny Rebel Cwtch</h1>
+
+    <div class="haikus">
+    <div>
+    <h3>14</h3>
+    <p>
+    <img class="beer" src="cwtch.png" width="159" height="264" alt="Tiny Rebel Cwtch">
+    <b>Cwtch Welsh Red Ale</b><br>
+    <a href="https://www.tinyrebel.co.uk">Tiny Rebel Brewing</a><br>
+    Wales<br>
+    <i>330mL can</i><br>
+    <i>4.6% Alc/Vol</i><br>
+    </div>
+    </div>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Beer</h2>
+    <p>
+    Probably the best word ever. Cwtch (rhymes with butch) can mean either cuddle or cubbyhole. Grab a glass, relax and cwtch up with this untraditional Welsh red ale - a perfect blend of six caramelly malts and three citrussy American hops.
+    </p><p>
+It isn't your average bitter - the hops do more to this deep amber coloured beer than just provide bite. Any old hop can do that! We've selected some of the most aromatic and tangy hops from the other side of the pond to give this red a fresh hit that complements the caramel flavours of the malts that gives this beer its colour. Drinkability and balance makes this beer.
+    </p><p>
+    We love a good Cwtch, and we're not the only ones... This beer won
+    Supreme Champion Beer of Britain in 2015.
+    </p>
+
+    <div class="space"></div>
+    <h2 class="haiku">The Brewery</h2>
+    <p>
+    Tiny Rebel was founded in Newport in 2012 by brothers-in-law Bradley Cummings and Gareth Williams. Williams had learned to homebrew with his grandfather, and introduced his brother-in-law to the hobby. After brewing in Cumming's father's garage for a number of years, the pair decided to make their hobby their profession. 
+    </p>
+
+<div id="mapid"></div>
+<div class="space"></div>
+<div class="space"></div>
+
+<h2 class="haiku">Beer Fact of the Day</h2>
+<p>
+In 1956, the US Government exposed bottles and cans of beer to nuclear
+explosions to determine whether the contents remained safe to drink.
+They declared the levels of radiation &#x201c;well within the permissible
+limits for emergency use&#x201d; although there was a &#x201c;slight flavour
+change in some of the products&#x201d;
+</p>
+
+
+<script>
+var mymap = L.map('mapid').setView([51.5905827,-3.1940603], 7);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+	L.marker([51.5905827,-3.1940603]).addTo(mymap)
+    .bindPopup("<b>Tiny Rebel Brewing</b><br />Newport<br>Wales").openPopup();
+
+	var popup = L.popup();
+
+	mymap.on('click', onMapClick);
+</script>
+
+
+</body>
+</html>

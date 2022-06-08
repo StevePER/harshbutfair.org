@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>har.sh: Garage door monitor</title>
+    <link rel="stylesheet" type="text/css" href="../harsh.css">
+    <link rel="stylesheet" type="text/css"
+     href="https://fonts.googleapis.com/css?family=IM+Fell+English">
+    <link rel="icon" href="../h.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h1 class="pagetitle"><a href="../">har.sh</a></h1>
+<h2 class="pagetitle">Some things that I've done.</h2>
+
+<nav>
+    <ul>
+        <li><a href="../index.html">all things</a></li>
+        <li><a href="../proj">projects</a></li>
+        <li><a href="../photography">photo</a></li>
+        <li><a href="../svg">svgphot</a></li>
+    </ul>
+</nav>
+
+<h1 class="haiku">Garage Door Monitor</h1>
+
+<p>
+I've left the garage door open at least a couple of times. My wife has done it at least once.
+Surely something can be done to alert us if this happens again! For this project I used an 
+<a class="ul" href="https://en.wikipedia.org/wiki/ESP32">ESP32</a>
+to monitor the state of the garage door, and a simple server-side Rust process to generate alerts
+if the door is left open for too long.
+</p>
+
+<h2 class="haiku">Hardware</h2>
+
+<p>
+As the ESP32's built-in <a class="ul" href="https://en.wikipedia.org/wiki/Hall_effect_sensor">Hall Effect sensor</a>
+can detect a magnetic field, the hardware for this project consisted of simply:<br/>
+  &#x25ba; An ESP32-PICO-KIT (but any ESP32 would do)<br/>
+  &#x25ba; A USB charger and cable<br/>
+  &#x25ba; A magnet
+</p>
+<p>
+By using the built-in sensor, there is no wiring required, apart from plugging in a USB charger
+to provide power.
+</p>
+
+<h2 class="haiku">Reading from the Hall Effect sensor</h2>
+
+<p>
+Reading from the Hall Effect sensor is very easy. First the ADC1 module needs to be configured
+to reading 12 bit values, as the Hall Effect sensor readings to not cover the full range of the
+input. Then we can read from the sensor simply by calling <code>hall_sensor_read()</code>.
+</p>
+<p>
+<code>adc1_config_width(ADC_WIDTH_BIT_12);<br/>
+    ...<br/>
+    int value = hall_sensor_read();</code>
+</p>
+
+<p>
+At first glance the Hall Effect sensor on the ESP32 acts a lot like a random number generator &mdash;
+the values it returns are super noisy! A simple way to filter out the noise is to perform lots of
+readings (200) and average them.
+</p>
+
+<h2 class="haiku">Is the door open or closed?</h2>
+
+<p>
+This logic is implemented on the ESP32. It could easily be implemented on the server-side instead.
+I read 200 samples from the Hall Effect sensor every 5 seconds, and then decide whether the door
+is open or closed.
+</p>
+
+<p>
+My initial idea to define fixed thresholds for door open and door closed didn't work reliably. The values
+returned by the sensor seemed to drift over time, possibly due to temperature. Instead I maintain an
+average of recent readings from when the door is considered closed, and define a difference threshold
+relative to this average.
+<img src="threshold.png" alt="Graph showing threshold changing over time" />
+</p>
+
+<h2 class="haiku">ESP32 to server messaging</h2>
+
+<p>
+To keep things simple, I use a fixed message format over UDP. The message is only sent when we determine
+that the door is open, and for 30 seconds after the door closes. The message contains three fields:<br/>
+&#x25ba; An indication of whether the door is open or closed<br/>
+&#x25ba; Number of seconds since the last state change<br/>
+&#x25ba; The most recent sensor reading (for debugging).
+</p>
+
+<p>
+The IP addresses of the ESP32 and the server are hardcoded, as is the port number for the UDP messages.
+UDP is a connectionless protocol, so this simplifies the the implementation on both sides.
+</p>
+
+<h2 class="haiku">Server-side processing</h2>
+<p>
+On the server side I use syslog to log when the door changes state, but otherwise the alerting behaviour
+is config-driven. I use <a class="ul" href="https://www.callmebot.com">CallMeBot</a> and their
+<a class="ul" href="https://www.callmebot.com/blog/free-api-signal-send-messages/">Signal API</a> to send
+messages when the door has been left open for too long, and then again when the door is closed.
+</p>
+<p>
+Configuration defines:<br/>
+&#x25ba; How long the door needs to have been open before sending an alert,<br />
+&#x25ba; The phone number of the recipient,<br />
+&#x25ba; The recipient's CallMeBot API key,<br />
+&#x25ba; The message text for when the door is open, and for when it is closed.<br />
+
+<img src="signal.png" alt="Signal message indicating garage door is open" />
+</p>
+
+<h2 class="haiku">Monitoring</h2>
+<p>
+<a class="ul" href="https://mmonit.com/monit">monit</a> is used to monitor the state of the ESP32 (via ping), and
+that the server process is running and listening on the expected UDP port. I'll receive an email if either
+side fails, and the server process can be restarted automatically.
+</p>
+<p>
+Not long after the initial deployment this monitoring identified that if the ESP32 lost its wifi connection,
+it never came back. As this is a rare occurrence, I fixed it in the simplest possible way by rebooting the
+ESP32 on disconnection.
+<p>
+
+<h2 class="haiku">The finished product</h2>
+<p>
+The final packaging for the ESP32 is somewhat rough. The plastic zip-lock bag keeps the dust off, while
+the elastic bands hold it in position.
+</p>
+<p>
+<img src="garage_monitor_2.jpg" alt="ESP32 monitoring garage door status" />
+</p>
+<p>
+<img src="garage_monitor_1.jpg" alt="ESP32 monitoring garage door status" />
+</p>
+<p>
+Source code for this project can be found on <a class="ul"
+    href="https://bitbucket.org/harshbutfair/garage/src/main/">Bitbucket</a>.
+</p>
+
+<div class="footer">
+<a href="https://twitter.com/harshbutfair"><img src="../twitter80.png"></a>
+<p>
+    Made in Australia from local and imported ingredients.
+</p>
+</div>
+
+</body>
+</html>
+

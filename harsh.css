@@ -223,6 +223,11 @@ img.svg
     width: 100%;
 }
 
+p>img
+{
+    max-width: 100%;
+}
+
 div.mainimg
 {
     position: relative;
